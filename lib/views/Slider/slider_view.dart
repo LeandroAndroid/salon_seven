@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:salon_seven_seven/constants/router_constants.dart';
 import 'package:salon_seven_seven/constants/ui.dart';
 
 import 'package:salon_seven_seven/views/Slider/widget/page_slider.dart';
@@ -10,6 +11,7 @@ class SliderView extends StatefulWidget {
 }
 
 class _SliderViewState extends State<SliderView> {
+
 
   final int _numPages = 3;
   final PageController _pageController = PageController(initialPage: 0);
@@ -65,7 +67,7 @@ class _SliderViewState extends State<SliderView> {
                       ),
                       PageSlider(
                         title: 'Liberdade',
-                        image: 'images/barber.png',
+                        image: 'images/barbeiro.png',
                         content: 'Saiba quando o seu barbeiro favorito estará\ndisponível para te atender da melhor forma\npossível ',
                       ),
                       PageSlider(
@@ -91,7 +93,10 @@ class _SliderViewState extends State<SliderView> {
         width: double.infinity,
         color: Colors.white,
         child: GestureDetector(
-          onTap: (){},
+          onTap: (){
+            Navigator.of(context).pop();
+            Navigator.of(context).pushReplacementNamed(RBase);
+          },
           child: Center(
             child: Padding(
               padding: EdgeInsets.only(bottom: 30.0),
